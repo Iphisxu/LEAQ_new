@@ -36,16 +36,16 @@ meic_shp_file = meicdir + 'emis.CN3AH_135X138.shp.ncf'
 
 # allocated emis
 allocated_dir = datadir + 'step2_allocated/'
-leaq_bio_file = allocated_dir + 'bio.nc'
-leaq_bol_file = allocated_dir + 'bol.nc'
-leaq_bld_file = allocated_dir + 'bld.nc'
-leaq_dst_file = allocated_dir + 'dst.nc'
-leaq_elc_file = allocated_dir + 'elc.nc'
-leaq_rod_file = allocated_dir + 'rod.nc'
-leaq_nro_file = allocated_dir + 'nro.nc'
-leaq_pet_file = allocated_dir + 'pet.nc'
-leaq_sol_file = allocated_dir + 'sol.nc'
-leaq_oth_file = allocated_dir + 'oth.nc'
+leaq_bio_file = allocated_dir + 'emis.CN3AH_135X138.bio.ncf'
+leaq_bol_file = allocated_dir + 'emis.CN3AH_135X138.bol.ncf'
+leaq_bld_file = allocated_dir + 'emis.CN3AH_135X138.bld.ncf'
+leaq_dst_file = allocated_dir + 'emis.CN3AH_135X138.dst.ncf'
+leaq_elc_file = allocated_dir + 'emis.CN3AH_135X138.elc.ncf'
+leaq_rod_file = allocated_dir + 'emis.CN3AH_135X138.rod.ncf'
+leaq_nro_file = allocated_dir + 'emis.CN3AH_135X138.nro.ncf'
+leaq_pet_file = allocated_dir + 'emis.CN3AH_135X138.pet.ncf'
+leaq_sol_file = allocated_dir + 'emis.CN3AH_135X138.sol.ncf'
+leaq_oth_file = allocated_dir + 'emis.CN3AH_135X138.oth.ncf'
 
 # =============================================================
 
