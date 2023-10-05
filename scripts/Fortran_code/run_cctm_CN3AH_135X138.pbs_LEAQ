@@ -293,7 +293,7 @@ while ($TODAYJ <= $STOP_DAY )  #>Compare dates in terms of YYYYJJJ
   #> Calculate Anthropogenic Emissions -- user-defined
   cd ../../PREP/emis
   setenv STDATE $YYYYJJJ
-  ./run_${GRID_NAME}.emis >& emis.log
+  ./run_${GRID_NAME}.emis_LEAQ >& emis.log
   cd ../../CCTM/scripts
 
   #> Initial conditions
@@ -362,35 +362,51 @@ while ($TODAYJ <= $STOP_DAY )  #>Compare dates in terms of YYYYJJJ
   setenv CMAQ_MASKS $SZpath/ocean.${GRID_NAME}.ncf #> horizontal grid-dependent ocean file
 
   #> Gridded Emissions Files 
-  setenv N_EMIS_GR 7
+  setenv N_EMIS_GR 11
   #set EMISfile  = emis.${GRID_NAME}.ncf
   setenv GR_EMIS_001 ${EMISpath}/emis_meic.${GRID_NAME}.ncf
   setenv GR_EMIS_LAB_001 MEIC
   setenv GR_EM_SYM_DATE_001 F # To change default behaviour please see Users Guide for EMIS_SYM_DATE
 
-  setenv GR_EMIS_002 ${EMISpath}/emis_ind.${GRID_NAME}.ncf
-  setenv GR_EMIS_LAB_002 MEIC_IND
+  setenv GR_EMIS_002 ${EMISpath}/emis_bom.${GRID_NAME}.ncf
+  setenv GR_EMIS_LAB_002 LEAQ_BOM
   setenv GR_EM_SYM_DATE_002 F # To change default behaviour please see Users Guide for EMIS_SYM_DATE
 
-  setenv GR_EMIS_003 ${EMISpath}/emis_res.${GRID_NAME}.ncf
-  setenv GR_EMIS_LAB_003 MEIC_RES
+  setenv GR_EMIS_003 ${EMISpath}/emis_bol.${GRID_NAME}.ncf
+  setenv GR_EMIS_LAB_003 LEAQ_BOL
   setenv GR_EM_SYM_DATE_003 F # To change default behaviour please see Users Guide for EMIS_SYM_DATE
 
-  setenv GR_EMIS_004 ${EMISpath}/emis_tra.${GRID_NAME}.ncf
-  setenv GR_EMIS_LAB_004 MEIC_TRA
+  setenv GR_EMIS_004 ${EMISpath}/emis_bld.${GRID_NAME}.ncf
+  setenv GR_EMIS_LAB_004 LEAQ_BLD
   setenv GR_EM_SYM_DATE_004 F # To change default behaviour please see Users Guide for EMIS_SYM_DATE
 
-  setenv GR_EMIS_005 ${EMISpath}/emis_agr.${GRID_NAME}.ncf
-  setenv GR_EMIS_LAB_005 MEIC_AGR
+  setenv GR_EMIS_005 ${EMISpath}/emis_dst.${GRID_NAME}.ncf
+  setenv GR_EMIS_LAB_005 LEAQ_DST
   setenv GR_EM_SYM_DATE_005 F # To change default behaviour please see Users Guide for EMIS_SYM_DATE
 
-  setenv GR_EMIS_006 ${EMISpath}/emis_shp.${GRID_NAME}.ncf
-  setenv GR_EMIS_LAB_006 MEIC_SHP
+  setenv GR_EMIS_006 ${EMISpath}/emis_elc.${GRID_NAME}.ncf
+  setenv GR_EMIS_LAB_006 LEAQ_ELC
   setenv GR_EM_SYM_DATE_006 F # To change default behaviour please see Users Guide for EMIS_SYM_DATE
 
-  setenv GR_EMIS_007 ${EMISpath}/emis_bio.${GRID_NAME}.ncf
-  setenv GR_EMIS_LAB_007 MEIC_BIO
+  setenv GR_EMIS_007 ${EMISpath}/emis_rod.${GRID_NAME}.ncf
+  setenv GR_EMIS_LAB_007 LEAQ_ROD
   setenv GR_EM_SYM_DATE_007 F # To change default behaviour please see Users Guide for EMIS_SYM_DATE
+
+  setenv GR_EMIS_007 ${EMISpath}/emis_nro.${GRID_NAME}.ncf
+  setenv GR_EMIS_LAB_007 LEAQ_NRO
+  setenv GR_EM_SYM_DATE_008 F # To change default behaviour please see Users Guide for EMIS_SYM_DATE
+
+  setenv GR_EMIS_007 ${EMISpath}/emis_pet.${GRID_NAME}.ncf
+  setenv GR_EMIS_LAB_007 LEAQ_PET
+  setenv GR_EM_SYM_DATE_009 F # To change default behaviour please see Users Guide for EMIS_SYM_DATE
+
+  setenv GR_EMIS_007 ${EMISpath}/emis_sol.${GRID_NAME}.ncf
+  setenv GR_EMIS_LAB_007 LEAQ_SOL
+  setenv GR_EM_SYM_DATE_010 F # To change default behaviour please see Users Guide for EMIS_SYM_DATE
+
+  setenv GR_EMIS_007 ${EMISpath}/emis_oth.${GRID_NAME}.ncf
+  setenv GR_EMIS_LAB_007 LEAQ_OTH
+  setenv GR_EM_SYM_DATE_011 F # To change default behaviour please see Users Guide for EMIS_SYM_DATE
   
   #> In-line point emissions configuration
   setenv N_EMIS_PT 0          #> Number of elevated source groups

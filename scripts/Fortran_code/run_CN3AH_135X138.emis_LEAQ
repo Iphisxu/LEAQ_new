@@ -11,42 +11,57 @@ setenv IOAPI_OFFSET_64 NO
 #setenv GRID_NAME CN27EC
 setenv GRIDDESC $CMAQ_DATA/met/mcip/${GRID_NAME}/${STDATE}/GRIDDESC
 
+# MEIC
 setenv POW_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.pow.ncf
 setenv IND_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.ind.ncf
 setenv RES_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.res.ncf
 setenv TRA_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.tra.ncf
 setenv AGR_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.agr.ncf
+
 setenv SHP_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.shp.ncf
 setenv BIO_FILE /wind1/home/eesfq/xuyf/data/megan/MEGANv2.10_${GRID_NAME}_SAPRC07TIC_${STDATE}.ncf
+
+# LEAQ
+setenv BOM_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.bom.ncf
+setenv BOL_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.bol.ncf
+setenv BLD_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.bld.ncf
+setenv DST_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.dst.ncf
+setenv ELC_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.elc.ncf
+setenv ROD_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.rod.ncf
+setenv NRO_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.nro.ncf
+setenv PET_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.pet.ncf
+setenv SOL_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.sol.ncf
+setenv OTH_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.oth.ncf
 
 setenv EMIS_1  $CMAQ_DATA/emis/emis_meic.${GRID_NAME}.ncf
 time ./src/CREATE_EMIS_MEIC
 
-setenv BOM_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.bom.ncf
-setenv BOL_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.bol.ncf
-setenv BLD_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.bld.ncf
-setenv DST_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.dst.ncf
-setenv ELC_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.elc.ncf
-setenv ROD_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.rod.ncf
-setenv NRO_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.nro.ncf
-setenv PET_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.pet.ncf
-setenv SOL_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.sol.ncf
-setenv OTH_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.oth.ncf
+setenv EMIS_1  $CMAQ_DATA/emis/emis_bom.${GRID_NAME}.ncf
+time ./src/CREATE_EMIS_BOM
 
-setenv EMIS_1  $CMAQ_DATA/emis/emis_ind.${GRID_NAME}.ncf
-time ./src/CREATE_EMIS_IND
+setenv EMIS_1  $CMAQ_DATA/emis/emis_bol.${GRID_NAME}.ncf
+time ./src/CREATE_EMIS_BOL
 
-setenv EMIS_1  $CMAQ_DATA/emis/emis_res.${GRID_NAME}.ncf
-time ./src/CREATE_EMIS_RES
+setenv EMIS_1  $CMAQ_DATA/emis/emis_bld.${GRID_NAME}.ncf
+time ./src/CREATE_EMIS_BLD
 
-setenv EMIS_1  $CMAQ_DATA/emis/emis_tra.${GRID_NAME}.ncf
-time ./src/CREATE_EMIS_TRA
+setenv EMIS_1  $CMAQ_DATA/emis/emis_dst.${GRID_NAME}.ncf
+time ./src/CREATE_EMIS_DST
 
-setenv EMIS_1  $CMAQ_DATA/emis/emis_agr.${GRID_NAME}.ncf
-time ./src/CREATE_EMIS_AGR
+setenv EMIS_1  $CMAQ_DATA/emis/emis_elc.${GRID_NAME}.ncf
+time ./src/CREATE_EMIS_ELC
 
-setenv EMIS_1  $CMAQ_DATA/emis/emis_shp.${GRID_NAME}.ncf
-time ./src/CREATE_EMIS_SHP
+setenv EMIS_1  $CMAQ_DATA/emis/emis_rod.${GRID_NAME}.ncf
+time ./src/CREATE_EMIS_ROD
 
-setenv EMIS_1  $CMAQ_DATA/emis/emis_bio.${GRID_NAME}.ncf
-time ./src/CREATE_EMIS_BIO
+setenv EMIS_1  $CMAQ_DATA/emis/emis_nro.${GRID_NAME}.ncf
+time ./src/CREATE_EMIS_NRO
+
+setenv EMIS_1  $CMAQ_DATA/emis/emis_pet.${GRID_NAME}.ncf
+time ./src/CREATE_EMIS_PET
+
+setenv EMIS_1  $CMAQ_DATA/emis/emis_sol.${GRID_NAME}.ncf
+time ./src/CREATE_EMIS_SOL
+
+setenv EMIS_1  $CMAQ_DATA/emis/emis_oth.${GRID_NAME}.ncf
+time ./src/CREATE_EMIS_OTH
