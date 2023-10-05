@@ -23,6 +23,17 @@
       CHARACTER(len=16) :: AGR_FILE = 'AGR_FILE'
       CHARACTER(len=16) :: BIO_FILE = 'BIO_FILE'
       CHARACTER(len=16) :: SHP_FILE = 'SHP_FILE'
+
+      CHARACTER(len=16) :: BOM_FILE = 'BOM_FILE'
+      CHARACTER(len=16) :: BOL_FILE = 'BOL_FILE'
+      CHARACTER(len=16) :: BLD_FILE = 'BLD_FILE'
+      CHARACTER(len=16) :: DST_FILE = 'DST_FILE'
+      CHARACTER(len=16) :: ELC_FILE = 'ELC_FILE'
+      CHARACTER(len=16) :: ROD_FILE = 'ROD_FILE'
+      CHARACTER(len=16) :: NRO_FILE = 'NRO_FILE'
+      CHARACTER(len=16) :: PET_FILE = 'PET_FILE'
+      CHARACTER(len=16) :: SOL_FILE = 'SOL_FILE'
+      CHARACTER(len=16) :: OTH_FILE = 'OTH_FILE'
 !      CHARACTER(len=16) :: OTH_FILE = 'OTH_FILE'
 ! Output file
       CHARACTER(len=16) :: EMIS_1     = 'EMIS_1'
@@ -62,18 +73,42 @@
       REAL :: week_fac_pow(7),week_fac_ind(7)
       REAL :: week_fac_res(7),week_fac_tra(7)
       REAL :: week_fac_shp(7)
+
+      REAL :: week_fac_bom(7),week_fac_bol(7)
+      REAL :: week_fac_bld(7),week_fac_dst(7)
+      REAL :: week_fac_rod(7),week_fac_nro(7)
+      REAL :: week_fac_elc(7),week_fac_pet(7)
+      REAL :: week_fac_sol(7),week_fac_oth(7)
 ! Hourly factor of POWER, INDUSTRY, RESIDENTIAL and TRANSPORT
       REAL :: hour_fac_pow(25),hour_fac_ind(25)
       REAL :: hour_fac_res(25),hour_fac_tra(25)
       REAL :: hour_fac_agr(25),hour_fac_shp(25)
+
+      REAL :: hour_fac_bom(25),hour_fac_bol(25)
+      REAL :: hour_fac_bld(25),hour_fac_dst(25)
+      REAL :: hour_fac_rod(25),hour_fac_nro(25)
+      REAL :: hour_fac_elc(25),hour_fac_pet(25)
+      REAL :: hour_fac_sol(25),hour_fac_oth(25)
 ! Vertical factor of POWER, INDUSTRY, RESIDENTIAL and TRANSPORT 
       REAL :: vert_fac_pow(8),vert_fac_ind(8)
       REAL :: vert_fac_res(8),vert_fac_tra(8)
       REAL :: vert_fac_agr(8),vert_fac_bio(8)
       REAL :: vert_fac_shp(8)   !vert_fac_oth(8)
+
+      REAL :: vert_fac_bom(8),vert_fac_bol(8)
+      REAL :: vert_fac_bld(8),vert_fac_dst(8)
+      REAL :: vert_fac_rod(8),vert_fac_nro(8)
+      REAL :: vert_fac_elc(8),vert_fac_pet(8)
+      REAL :: vert_fac_sol(8),vert_fac_oth(8)
 ! Day factor of POWER, INDUSTRY, RESIDENTIAL and TRANSPORT
       REAL :: day_fac_pow, day_fac_ind
       REAL :: day_fac_res, day_fac_tra, day_fac_shp
+
+      REAL :: day_fac_bom, day_fac_bol
+      REAL :: day_fac_bld, day_fac_dst
+      REAL :: day_fac_rod, day_fac_nro
+      REAL :: day_fac_elc, day_fac_pet
+      REAL :: day_fac_sol, day_fac_oth
 ! Variables list in input nc file
       CHARACTER(len=16)  :: GCVARLIST(54), AEVARLIST(19)
       CHARACTER(len=16)  :: NRVARLIST(1), BIOVARLIST(31)
