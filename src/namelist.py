@@ -13,12 +13,17 @@ emisarea  = emisdir + 'AQ_2020_area.xlsx'
 secmap = datadir + 'SectorMapping_new.xlsx'
 
 # local emis netcdf
-emis_nc_dir = datadir + 'step1_preliminary/meic_category/sum/'
-local_ind_file = emis_nc_dir + 'Industry.nc'
-local_pow_file = emis_nc_dir + 'Power.nc'
-local_tra_file = emis_nc_dir + 'Transportation.nc'
-local_res_file = emis_nc_dir + 'Residential.nc'
-local_agr_file = emis_nc_dir + 'Agriculture.nc'
+emis_nc_dir = datadir + 'step1_preliminary/leaq_category/sum/'
+local_bio_file = emis_nc_dir + 'Biomass.nc'
+local_bol_file = emis_nc_dir + 'Boiler.nc'
+local_bld_file = emis_nc_dir + 'Building.nc'
+local_dst_file = emis_nc_dir + 'Dust.nc'
+local_elc_file = emis_nc_dir + 'Electric.nc'
+local_rod_file = emis_nc_dir + 'Road.nc'
+local_nro_file = emis_nc_dir + 'NonRoad.nc'
+local_pet_file = emis_nc_dir + 'Petrochemicals.nc'
+local_sol_file = emis_nc_dir + 'Solvent.nc'
+local_oth_file = emis_nc_dir + 'Other.nc'
 
 # meic emis
 meicdir = datadir + 'MEIC_AQ/'
@@ -31,11 +36,16 @@ meic_shp_file = meicdir + 'emis.CN3AH_135X138.shp.ncf'
 
 # allocated emis
 allocated_dir = datadir + 'step2_allocated/'
-leaq_ind_file = allocated_dir + 'ind.nc'
-leaq_pow_file = allocated_dir + 'pow.nc'
-leaq_tra_file = allocated_dir + 'tra.nc'
-leaq_res_file = allocated_dir + 'res.nc'
-leaq_agr_file = allocated_dir + 'agr.nc'
+leaq_bio_file = allocated_dir + 'bio.nc'
+leaq_bol_file = allocated_dir + 'bol.nc'
+leaq_bld_file = allocated_dir + 'bld.nc'
+leaq_dst_file = allocated_dir + 'dst.nc'
+leaq_elc_file = allocated_dir + 'elc.nc'
+leaq_rod_file = allocated_dir + 'rod.nc'
+leaq_nro_file = allocated_dir + 'nro.nc'
+leaq_pet_file = allocated_dir + 'pet.nc'
+leaq_sol_file = allocated_dir + 'sol.nc'
+leaq_oth_file = allocated_dir + 'oth.nc'
 
 # =============================================================
 
