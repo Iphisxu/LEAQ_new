@@ -23,7 +23,8 @@
       CHARACTER(len=16) :: AGR_FILE = 'AGR_FILE'
       CHARACTER(len=16) :: BIO_FILE = 'BIO_FILE'
       CHARACTER(len=16) :: SHP_FILE = 'SHP_FILE'
-
+      !      CHARACTER(len=16) :: OTH_FILE = 'OTH_FILE'
+      !! Add by Evan
       CHARACTER(len=16) :: BOM_FILE = 'BOM_FILE'
       CHARACTER(len=16) :: BOL_FILE = 'BOL_FILE'
       CHARACTER(len=16) :: BLD_FILE = 'BLD_FILE'
@@ -34,7 +35,6 @@
       CHARACTER(len=16) :: PET_FILE = 'PET_FILE'
       CHARACTER(len=16) :: SOL_FILE = 'SOL_FILE'
       CHARACTER(len=16) :: OTH_FILE = 'OTH_FILE'
-!      CHARACTER(len=16) :: OTH_FILE = 'OTH_FILE'
 ! Output file
       CHARACTER(len=16) :: EMIS_1     = 'EMIS_1'
 ! Parameters for file units
@@ -73,7 +73,7 @@
       REAL :: week_fac_pow(7),week_fac_ind(7)
       REAL :: week_fac_res(7),week_fac_tra(7)
       REAL :: week_fac_shp(7)
-
+      !! Add by Evan
       REAL :: week_fac_bom(7),week_fac_bol(7)
       REAL :: week_fac_bld(7),week_fac_dst(7)
       REAL :: week_fac_rod(7),week_fac_nro(7)
@@ -83,7 +83,7 @@
       REAL :: hour_fac_pow(25),hour_fac_ind(25)
       REAL :: hour_fac_res(25),hour_fac_tra(25)
       REAL :: hour_fac_agr(25),hour_fac_shp(25)
-
+      !! Add by Evan
       REAL :: hour_fac_bom(25),hour_fac_bol(25)
       REAL :: hour_fac_bld(25),hour_fac_dst(25)
       REAL :: hour_fac_rod(25),hour_fac_nro(25)
@@ -94,7 +94,7 @@
       REAL :: vert_fac_res(8),vert_fac_tra(8)
       REAL :: vert_fac_agr(8),vert_fac_bio(8)
       REAL :: vert_fac_shp(8)   !vert_fac_oth(8)
-
+      !! Add by Evan
       REAL :: vert_fac_bom(8),vert_fac_bol(8)
       REAL :: vert_fac_bld(8),vert_fac_dst(8)
       REAL :: vert_fac_rod(8),vert_fac_nro(8)
@@ -103,7 +103,7 @@
 ! Day factor of POWER, INDUSTRY, RESIDENTIAL and TRANSPORT
       REAL :: day_fac_pow, day_fac_ind
       REAL :: day_fac_res, day_fac_tra, day_fac_shp
-
+      !! Add by Evan
       REAL :: day_fac_bom, day_fac_bol
       REAL :: day_fac_bld, day_fac_dst
       REAL :: day_fac_rod, day_fac_nro
@@ -120,7 +120,7 @@
       REAL, ALLOCATABLE, DIMENSION (:,:,:,:) :: VAR_TRA, VAR_RES
       REAL, ALLOCATABLE, DIMENSION (:,:,:,:) :: VAR_BIO, VAR_SHP
       REAL, ALLOCATABLE, DIMENSION (:,:,:,:) :: VAR_AGR     ! VAR_OTH
-
+      !! Add by Evan
       REAL, ALLOCATABLE, DIMENSION (:,:,:,:) :: VAR_BOM, VAR_BOL
       REAL, ALLOCATABLE, DIMENSION (:,:,:,:) :: VAR_BLD, VAR_DST
       REAL, ALLOCATABLE, DIMENSION (:,:,:,:) :: VAR_ROD, VAR_NRO
@@ -178,6 +178,17 @@
       week_fac_res=(/0.159,0.159,0.159,0.159,0.159,0.103,0.103/)
       week_fac_tra=(/0.154,0.154,0.154,0.154,0.154,0.115,0.115/)
       week_fac_shp=(/0.154,0.154,0.154,0.154,0.154,0.115,0.115/)
+      !! Add by Evan
+      week_fac_bom=(/0.154,0.154,0.154,0.154,0.154,0.115,0.115/)
+      week_fac_bol=(/0.154,0.154,0.154,0.154,0.154,0.115,0.115/)
+      week_fac_bld=(/0.154,0.154,0.154,0.154,0.154,0.115,0.115/)
+      week_fac_dst=(/0.154,0.154,0.154,0.154,0.154,0.115,0.115/)
+      week_fac_elc=(/0.154,0.154,0.154,0.154,0.154,0.115,0.115/)
+      week_fac_rod=(/0.154,0.154,0.154,0.154,0.154,0.115,0.115/)
+      week_fac_nro=(/0.154,0.154,0.154,0.154,0.154,0.115,0.115/)
+      week_fac_pet=(/0.154,0.154,0.154,0.154,0.154,0.115,0.115/)
+      week_fac_sol=(/0.154,0.154,0.154,0.154,0.154,0.115,0.115/)
+      week_fac_oth=(/0.154,0.154,0.154,0.154,0.154,0.115,0.115/)
 
       hour_fac_pow=(/0.0433,0.0457,0.0478,0.0486,0.0494,0.0497,0.0501,
      &               0.0500,0.0497,0.0489,0.0477,0.0473,0.0466,0.0440,
@@ -203,6 +214,47 @@
      &               0.0620,0.0594,0.0574,0.0557,0.0490,0.0454,0.0417,
      &               0.0308,0.0216,0.0173,0.0132,0.0138,0.0150,0.0155,
      &               0.0157,0.0290,0.0564,0.0599/)
+      !! Add by Evan
+      hour_fac_bom=(/0.0433,0.0457,0.0478,0.0486,0.0494,0.0497,0.0501,
+     &               0.0500,0.0497,0.0489,0.0477,0.0473,0.0466,0.0440,
+     &               0.0397,0.0353,0.0325,0.0300,0.0288,0.0284,0.0292,
+     &               0.0316,0.0354,0.0403,0.0433/)
+      hour_fac_bol=(/0.0433,0.0457,0.0478,0.0486,0.0494,0.0497,0.0501,
+     &               0.0500,0.0497,0.0489,0.0477,0.0473,0.0466,0.0440,
+     &               0.0397,0.0353,0.0325,0.0300,0.0288,0.0284,0.0292,
+     &               0.0316,0.0354,0.0403,0.0433/)
+      hour_fac_bld=(/0.0433,0.0457,0.0478,0.0486,0.0494,0.0497,0.0501,
+     &               0.0500,0.0497,0.0489,0.0477,0.0473,0.0466,0.0440,
+     &               0.0397,0.0353,0.0325,0.0300,0.0288,0.0284,0.0292,
+     &               0.0316,0.0354,0.0403,0.0433/)
+      hour_fac_dst=(/0.0433,0.0457,0.0478,0.0486,0.0494,0.0497,0.0501,
+     &               0.0500,0.0497,0.0489,0.0477,0.0473,0.0466,0.0440,
+     &               0.0397,0.0353,0.0325,0.0300,0.0288,0.0284,0.0292,
+     &               0.0316,0.0354,0.0403,0.0433/)
+      hour_fac_elc=(/0.0433,0.0457,0.0478,0.0486,0.0494,0.0497,0.0501,
+     &               0.0500,0.0497,0.0489,0.0477,0.0473,0.0466,0.0440,
+     &               0.0397,0.0353,0.0325,0.0300,0.0288,0.0284,0.0292,
+     &               0.0316,0.0354,0.0403,0.0433/)
+      hour_fac_rod=(/0.0433,0.0457,0.0478,0.0486,0.0494,0.0497,0.0501,
+     &               0.0500,0.0497,0.0489,0.0477,0.0473,0.0466,0.0440,
+     &               0.0397,0.0353,0.0325,0.0300,0.0288,0.0284,0.0292,
+     &               0.0316,0.0354,0.0403,0.0433/)
+      hour_fac_nro=(/0.0433,0.0457,0.0478,0.0486,0.0494,0.0497,0.0501,
+     &               0.0500,0.0497,0.0489,0.0477,0.0473,0.0466,0.0440,
+     &               0.0397,0.0353,0.0325,0.0300,0.0288,0.0284,0.0292,
+     &               0.0316,0.0354,0.0403,0.0433/)
+      hour_fac_pet=(/0.0433,0.0457,0.0478,0.0486,0.0494,0.0497,0.0501,
+     &               0.0500,0.0497,0.0489,0.0477,0.0473,0.0466,0.0440,
+     &               0.0397,0.0353,0.0325,0.0300,0.0288,0.0284,0.0292,
+     &               0.0316,0.0354,0.0403,0.0433/)
+      hour_fac_sol=(/0.0433,0.0457,0.0478,0.0486,0.0494,0.0497,0.0501,
+     &               0.0500,0.0497,0.0489,0.0477,0.0473,0.0466,0.0440,
+     &               0.0397,0.0353,0.0325,0.0300,0.0288,0.0284,0.0292,
+     &               0.0316,0.0354,0.0403,0.0433/)
+      hour_fac_oth=(/0.0433,0.0457,0.0478,0.0486,0.0494,0.0497,0.0501,
+     &               0.0500,0.0497,0.0489,0.0477,0.0473,0.0466,0.0440,
+     &               0.0397,0.0353,0.0325,0.0300,0.0288,0.0284,0.0292,
+     &               0.0316,0.0354,0.0403,0.0433/)
 
       vert_fac_pow=(/0.00,0.05,0.10,0.30,0.20,0.20,0.10,0.05/)
       vert_fac_ind=(/0.50,0.30,0.20,0.00,0.00,0.00,0.00,0.00/)
@@ -212,6 +264,18 @@
       vert_fac_shp=(/1,0,0,0,0,0,0,0/)
       vert_fac_bio=(/1,0,0,0,0,0,0,0/)
 !      vert_fac_oth=(/1,0,0,0,0,0,0,0/)
+      !! Add by Evan
+      vert_fac_bom=(/1,0,0,0,0,0,0,0/)
+      vert_fac_bol=(/0.00,0.05,0.10,0.30,0.20,0.20,0.10,0.05/)
+      vert_fac_bld=(/0.50,0.30,0.20,0.00,0.00,0.00,0.00,0.00/)
+      vert_fac_dst=(/1,0,0,0,0,0,0,0/)
+      vert_fac_elc=(/0.00,0.05,0.10,0.30,0.20,0.20,0.10,0.05/)
+      vert_fac_rod=(/1,0,0,0,0,0,0,0/)
+      vert_fac_nro=(/1,0,0,0,0,0,0,0/)
+      vert_fac_pet=(/0.50,0.30,0.20,0.00,0.00,0.00,0.00,0.00/)
+      vert_fac_sol=(/1,0,0,0,0,0,0,0/)
+      vert_fac_oth=(/1,0,0,0,0,0,0,0/)
+
 
       print*,'print sum of factors'
       print*,sum(week_fac_pow),sum(week_fac_ind),sum(week_fac_res),
@@ -249,6 +313,17 @@
       day_fac_res = week_fac_res( WEEK )/SUM( WEEK_NUM*week_fac_res )
       day_fac_tra = week_fac_tra( WEEK )/SUM( WEEK_NUM*week_fac_tra )
       day_fac_shp = week_fac_shp( WEEK )/SUM( WEEK_NUM*week_fac_shp )
+      !! Add by Evan
+      day_fac_bom = week_fac_bom( WEEK )/SUM( WEEK_NUM*week_fac_bom )
+      day_fac_bol = week_fac_bol( WEEK )/SUM( WEEK_NUM*week_fac_bol )
+      day_fac_bld = week_fac_bld( WEEK )/SUM( WEEK_NUM*week_fac_bld )
+      day_fac_dst = week_fac_dst( WEEK )/SUM( WEEK_NUM*week_fac_dst )
+      day_fac_elc = week_fac_elc( WEEK )/SUM( WEEK_NUM*week_fac_elc )
+      day_fac_rod = week_fac_rod( WEEK )/SUM( WEEK_NUM*week_fac_rod )
+      day_fac_nro = week_fac_nro( WEEK )/SUM( WEEK_NUM*week_fac_nro )
+      day_fac_pet = week_fac_pet( WEEK )/SUM( WEEK_NUM*week_fac_pet )
+      day_fac_sol = week_fac_sol( WEEK )/SUM( WEEK_NUM*week_fac_sol )
+      day_fac_oth = week_fac_oth( WEEK )/SUM( WEEK_NUM*week_fac_oth )
 
 !      print*, day_fac_pow, day_fac_ind, day_fac_res, day_fac_tra
 
@@ -265,6 +340,17 @@
       ALLOCATE ( VAR_AGR( NCOLS3D, NROWS3D,  1, 12 ) )
       ALLOCATE ( VAR_BIO( NCOLS3D, NROWS3D, 31, 25 ) )
 !      ALLOCATE ( VAR_OTH( NCOLS3D, NROWS3D,  2, 12 ) )
+      !! Add by Evan
+      ALLOCATE ( VAR_BOM( NCOLS3D, NROWS3D, 74, 12 ) )
+      ALLOCATE ( VAR_BOL( NCOLS3D, NROWS3D, 74, 12 ) )
+      ALLOCATE ( VAR_BLD( NCOLS3D, NROWS3D, 74, 12 ) )
+      ALLOCATE ( VAR_DST( NCOLS3D, NROWS3D, 74, 12 ) )
+      ALLOCATE ( VAR_ELC( NCOLS3D, NROWS3D, 74, 12 ) )
+      ALLOCATE ( VAR_ROD( NCOLS3D, NROWS3D, 74, 12 ) )
+      ALLOCATE ( VAR_NRO( NCOLS3D, NROWS3D, 74, 12 ) )
+      ALLOCATE ( VAR_PET( NCOLS3D, NROWS3D, 74, 12 ) )
+      ALLOCATE ( VAR_SOL( NCOLS3D, NROWS3D, 74, 12 ) )
+      ALLOCATE ( VAR_OTH( NCOLS3D, NROWS3D, 74, 12 ) )
 
 
 !... Load varaible index from input file to output file
@@ -317,6 +403,57 @@
          MESG = 'Could not open file '//TRIM(MESG)
          CALL M3EXIT( PROGNAME, 0, 0, MESG, 2 )
       ENDIF
+      !! Add by Evan
+      IF ( .NOT. OPEN3( BOM_FILE, FSREAD3, PROGNAME ) ) THEN
+         CALL NAMEVAL (BOM_FILE, MESG)  ! get input file name and path
+         MESG = 'Could not open file '//TRIM(MESG)
+         CALL M3EXIT( PROGNAME, 0, 0, MESG, 2 )
+      ENDIF
+      IF ( .NOT. OPEN3( BOL_FILE, FSREAD3, PROGNAME ) ) THEN
+         CALL NAMEVAL (BOL_FILE, MESG)  ! get input file name and path
+         MESG = 'Could not open file '//TRIM(MESG)
+         CALL M3EXIT( PROGNAME, 0, 0, MESG, 2 )
+      ENDIF
+      IF ( .NOT. OPEN3( BLD_FILE, FSREAD3, PROGNAME ) ) THEN
+         CALL NAMEVAL (BLD_FILE, MESG)  ! get input file name and path
+         MESG = 'Could not open file '//TRIM(MESG)
+         CALL M3EXIT( PROGNAME, 0, 0, MESG, 2 )
+      ENDIF
+      IF ( .NOT. OPEN3( DST_FILE, FSREAD3, PROGNAME ) ) THEN
+         CALL NAMEVAL (DST_FILE, MESG)  ! get input file name and path
+         MESG = 'Could not open file '//TRIM(MESG)
+         CALL M3EXIT( PROGNAME, 0, 0, MESG, 2 )
+      ENDIF
+      IF ( .NOT. OPEN3( ELC_FILE, FSREAD3, PROGNAME ) ) THEN
+         CALL NAMEVAL (ELC_FILE, MESG)  ! get input file name and path
+         MESG = 'Could not open file '//TRIM(MESG)
+         CALL M3EXIT( PROGNAME, 0, 0, MESG, 2 )
+      ENDIF
+      IF ( .NOT. OPEN3( ROD_FILE, FSREAD3, PROGNAME ) ) THEN
+         CALL NAMEVAL (ROD_FILE, MESG)  ! get input file name and path
+         MESG = 'Could not open file '//TRIM(MESG)
+         CALL M3EXIT( PROGNAME, 0, 0, MESG, 2 )
+      ENDIF
+      IF ( .NOT. OPEN3( NRO_FILE, FSREAD3, PROGNAME ) ) THEN
+         CALL NAMEVAL (NRO_FILE, MESG)  ! get input file name and path
+         MESG = 'Could not open file '//TRIM(MESG)
+         CALL M3EXIT( PROGNAME, 0, 0, MESG, 2 )
+      ENDIF
+      IF ( .NOT. OPEN3( PET_FILE, FSREAD3, PROGNAME ) ) THEN
+         CALL NAMEVAL (PET_FILE, MESG)  ! get input file name and path
+         MESG = 'Could not open file '//TRIM(MESG)
+         CALL M3EXIT( PROGNAME, 0, 0, MESG, 2 )
+      ENDIF
+      IF ( .NOT. OPEN3( SOL_FILE, FSREAD3, PROGNAME ) ) THEN
+         CALL NAMEVAL (SOL_FILE, MESG)  ! get input file name and path
+         MESG = 'Could not open file '//TRIM(MESG)
+         CALL M3EXIT( PROGNAME, 0, 0, MESG, 2 )
+      ENDIF
+      IF ( .NOT. OPEN3( OTH_FILE, FSREAD3, PROGNAME ) ) THEN
+         CALL NAMEVAL (OTH_FILE, MESG)  ! get input file name and path
+         MESG = 'Could not open file '//TRIM(MESG)
+         CALL M3EXIT( PROGNAME, 0, 0, MESG, 2 )
+      ENDIF
 
 
       print*,"liu1" 
@@ -361,6 +498,58 @@
 !            MESG = 'Error reading '//TRIM(OTH_FILE)
 !            CALL M3EXIT(PROGNAME,0,0,MESG,2)
 !        ENDIF
+        !! Add by Evan
+        IF( .NOT. READ3(BOM_FILE,'ALL',-1,rdjdate,rdjtime,
+     &                                        VAR_BOM(:,:,:,t))) THEN
+            MESG = 'Error reading '//TRIM(BOM_FILE)
+            CALL M3EXIT(PROGNAME,0,0,MESG,2)
+        ENDIF
+        IF( .NOT. READ3(BOL_FILE,'ALL',-1,rdjdate,rdjtime,
+     &                                        VAR_BOL(:,:,:,t))) THEN
+            MESG = 'Error reading '//TRIM(BOL_FILE)
+            CALL M3EXIT(PROGNAME,0,0,MESG,2)
+        ENDIF
+        IF( .NOT. READ3(BLD_FILE,'ALL',-1,rdjdate,rdjtime,
+     &                                        VAR_BLD(:,:,:,t))) THEN
+            MESG = 'Error reading '//TRIM(BLD_FILE)
+            CALL M3EXIT(PROGNAME,0,0,MESG,2)
+        ENDIF
+        IF( .NOT. READ3(DST_FILE,'ALL',-1,rdjdate,rdjtime,
+     &                                        VAR_DST(:,:,:,t))) THEN
+            MESG = 'Error reading '//TRIM(DST_FILE)
+            CALL M3EXIT(PROGNAME,0,0,MESG,2)
+        ENDIF
+        IF( .NOT. READ3(ELC_FILE,'ALL',-1,rdjdate,rdjtime,
+     &                                        VAR_ELC(:,:,:,t))) THEN
+            MESG = 'Error reading '//TRIM(ELC_FILE)
+            CALL M3EXIT(PROGNAME,0,0,MESG,2)
+        ENDIF
+        IF( .NOT. READ3(ROD_FILE,'ALL',-1,rdjdate,rdjtime,
+     &                                        VAR_ROD(:,:,:,t))) THEN
+            MESG = 'Error reading '//TRIM(ROD_FILE)
+            CALL M3EXIT(PROGNAME,0,0,MESG,2)
+        ENDIF
+        IF( .NOT. READ3(NRO_FILE,'ALL',-1,rdjdate,rdjtime,
+     &                                        VAR_NRO(:,:,:,t))) THEN
+            MESG = 'Error reading '//TRIM(NRO_FILE)
+            CALL M3EXIT(PROGNAME,0,0,MESG,2)
+        ENDIF
+        IF( .NOT. READ3(PET_FILE,'ALL',-1,rdjdate,rdjtime,
+     &                                        VAR_PET(:,:,:,t))) THEN
+            MESG = 'Error reading '//TRIM(PET_FILE)
+            CALL M3EXIT(PROGNAME,0,0,MESG,2)
+        ENDIF
+        IF( .NOT. READ3(SOL_FILE,'ALL',-1,rdjdate,rdjtime,
+     &                                        VAR_SOL(:,:,:,t))) THEN
+            MESG = 'Error reading '//TRIM(SOL_FILE)
+            CALL M3EXIT(PROGNAME,0,0,MESG,2)
+        ENDIF
+        IF( .NOT. READ3(OTH_FILE,'ALL',-1,rdjdate,rdjtime,
+     &                                        VAR_OTH(:,:,:,t))) THEN
+            MESG = 'Error reading '//TRIM(OTH_FILE)
+            CALL M3EXIT(PROGNAME,0,0,MESG,2)
+        ENDIF
+
         CALL NEXTIME(rdjdate,rdjtime,rdtstep)
       ENDDO
 
