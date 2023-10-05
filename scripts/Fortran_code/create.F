@@ -584,22 +584,30 @@
             IBUFF(:,:,z,t,ant_index(s)) = IBUFF(:,:,z,t,ant_index(s)) +
      &                         ( VAR_POW(:,:,s,MONTH)*
      &                   day_fac_pow*hour_fac_pow(t)*vert_fac_pow(z) )*
+     &                         ( VAR_IND(:,:,s,MONTH)*
+     &                   day_fac_ind*hour_fac_ind(t)*vert_fac_ind(z) )*
+     &                         ( VAR_RES(:,:,s,MONTH)*
+     &                   day_fac_res*hour_fac_res(t)*vert_fac_res(z) )*
+     &                         ( VAR_TRA(:,:,s,MONTH)*
+     &                   day_fac_tra*hour_fac_tra(t)*vert_fac_tra(z) )*
+     &                         ( VAR_SHP(:,:,s,MONTH)*
+     &                   day_fac_shp*hour_fac_shp(t)*vert_fac_shp(z) )*
      &                           1000000/3600
           ENDDO
         ENDDO
       ENDDO
 
 
-!      DO s=1,1
-!        DO t=1,25
-!          DO z=1,8
-!            IBUFF(:,:,z,t,agr_index(s)) = IBUFF(:,:,z,t,agr_index(s)) +
-!     &                          VAR_AGR(:,:,s,MONTH)/
-!     &                              MON_NUM(MONTH)*hour_fac_agr(t)*
-!     &                              vert_fac_agr(z)*1000000/3600
-!          ENDDO
-!        ENDDO
-!      ENDDO
+      DO s=1,1
+        DO t=1,25
+          DO z=1,8
+            IBUFF(:,:,z,t,agr_index(s)) = IBUFF(:,:,z,t,agr_index(s)) +
+     &                          VAR_AGR(:,:,s,MONTH)/
+     &                              MON_NUM(MONTH)*hour_fac_agr(t)*
+     &                              vert_fac_agr(z)*1000000/3600
+          ENDDO
+        ENDDO
+      ENDDO
 
 
 !      DO s=1,2
@@ -613,14 +621,14 @@
 !        ENDDO
 !      ENDDO
 
-!      DO s=1,31
-!        DO t=1,25
-!          DO z=1,8
-!            IBUFF(:,:,z,t,bio_index(s)) = IBUFF(:,:,z,t,bio_index(s)) +
-!     &                          VAR_BIO(:,:,s,t)*vert_fac_bio(z)
-!          ENDDO
-!        ENDDO
-!      ENDDO
+      DO s=1,31
+        DO t=1,25
+          DO z=1,8
+            IBUFF(:,:,z,t,bio_index(s)) = IBUFF(:,:,z,t,bio_index(s)) +
+     &                          VAR_BIO(:,:,s,t)*vert_fac_bio(z)
+          ENDDO
+        ENDDO
+      ENDDO
 
 !... variable
 !....               1    2    3      4    5    6       7      8
