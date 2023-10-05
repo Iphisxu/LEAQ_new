@@ -577,7 +577,7 @@
       IBUFF(:,:,:,:,:) = 0
 
 !... adjust emission
-!... store input date to IBUFF
+!... store MEIC input data to IBUFF
       DO s=1,74
         DO t=1,25
           DO z=1,8
@@ -609,23 +609,124 @@
         ENDDO
       ENDDO
 
-
-!      DO s=1,2
-!        DO t=1,25
-!          DO z=1,8
-!            IBUFF(:,:,z,t,oth_index(s)) = IBUFF(:,:,z,t,oth_index(s)) +
-!     &                          VAR_OTH(:,:,s,MONTH)/
-!     &                              MON_NUM(MONTH)/24*
-!     &                              vert_fac_oth(z)*1000000/3600
-!          ENDDO
-!        ENDDO
-!      ENDDO
-
       DO s=1,31
         DO t=1,25
           DO z=1,8
             IBUFF(:,:,z,t,bio_index(s)) = IBUFF(:,:,z,t,bio_index(s)) +
      &                          VAR_BIO(:,:,s,t)*vert_fac_bio(z)
+          ENDDO
+        ENDDO
+      ENDDO
+
+      !! Add by Evan
+!... store LEAQ input data to IBUFF 
+      ! 1.BOM
+      DO s=1,74
+        DO t=1,25
+          DO z=1,8
+            IBUFF(:,:,z,t,ant_index(s)) = IBUFF(:,:,z,t,ant_index(s)) +
+     &                         ( VAR_BOM(:,:,s,MONTH)*
+     &                   day_fac_bom*hour_fac_bom(t)*vert_fac_bom(z) )*
+     &                           1000000/3600
+          ENDDO
+        ENDDO
+      ENDDO
+      ! 2.BOL
+      DO s=1,74
+        DO t=1,25
+          DO z=1,8
+            IBUFF(:,:,z,t,ant_index(s)) = IBUFF(:,:,z,t,ant_index(s)) +
+     &                         ( VAR_BOL(:,:,s,MONTH)*
+     &                   day_fac_bol*hour_fac_bol(t)*vert_fac_bol(z) )*
+     &                           1000000/3600
+          ENDDO
+        ENDDO
+      ENDDO
+      ! 3.BLD
+      DO s=1,74
+        DO t=1,25
+          DO z=1,8
+            IBUFF(:,:,z,t,ant_index(s)) = IBUFF(:,:,z,t,ant_index(s)) +
+     &                         ( VAR_BLD(:,:,s,MONTH)*
+     &                   day_fac_bld*hour_fac_bld(t)*vert_fac_bld(z) )*
+     &                           1000000/3600
+          ENDDO
+        ENDDO
+      ENDDO
+      ! 4.DST
+      DO s=1,74
+        DO t=1,25
+          DO z=1,8
+            IBUFF(:,:,z,t,ant_index(s)) = IBUFF(:,:,z,t,ant_index(s)) +
+     &                         ( VAR_DST(:,:,s,MONTH)*
+     &                   day_fac_dst*hour_fac_dst(t)*vert_fac_dst(z) )*
+     &                           1000000/3600
+          ENDDO
+        ENDDO
+      ENDDO
+      ! 5.ELC
+      DO s=1,74
+        DO t=1,25
+          DO z=1,8
+            IBUFF(:,:,z,t,ant_index(s)) = IBUFF(:,:,z,t,ant_index(s)) +
+     &                         ( VAR_ELC(:,:,s,MONTH)*
+     &                   day_fac_elc*hour_fac_elc(t)*vert_fac_elc(z) )*
+     &                           1000000/3600
+          ENDDO
+        ENDDO
+      ENDDO
+      ! 6.ROD
+      DO s=1,74
+        DO t=1,25
+          DO z=1,8
+            IBUFF(:,:,z,t,ant_index(s)) = IBUFF(:,:,z,t,ant_index(s)) +
+     &                         ( VAR_ROD(:,:,s,MONTH)*
+     &                   day_fac_rod*hour_fac_rod(t)*vert_fac_rod(z) )*
+     &                           1000000/3600
+          ENDDO
+        ENDDO
+      ENDDO
+      ! 7.NRO
+      DO s=1,74
+        DO t=1,25
+          DO z=1,8
+            IBUFF(:,:,z,t,ant_index(s)) = IBUFF(:,:,z,t,ant_index(s)) +
+     &                         ( VAR_NRO(:,:,s,MONTH)*
+     &                   day_fac_nro*hour_fac_nro(t)*vert_fac_nro(z) )*
+     &                           1000000/3600
+          ENDDO
+        ENDDO
+      ENDDO
+      ! 8.PET
+      DO s=1,74
+        DO t=1,25
+          DO z=1,8
+            IBUFF(:,:,z,t,ant_index(s)) = IBUFF(:,:,z,t,ant_index(s)) +
+     &                         ( VAR_PET(:,:,s,MONTH)*
+     &                   day_fac_pet*hour_fac_pet(t)*vert_fac_pet(z) )*
+     &                           1000000/3600
+          ENDDO
+        ENDDO
+      ENDDO
+      ! 9.SOL
+      DO s=1,74
+        DO t=1,25
+          DO z=1,8
+            IBUFF(:,:,z,t,ant_index(s)) = IBUFF(:,:,z,t,ant_index(s)) +
+     &                         ( VAR_SOL(:,:,s,MONTH)*
+     &                   day_fac_sol*hour_fac_sol(t)*vert_fac_sol(z) )*
+     &                           1000000/3600
+          ENDDO
+        ENDDO
+      ENDDO
+      ! 10.OTH
+      DO s=1,74
+        DO t=1,25
+          DO z=1,8
+            IBUFF(:,:,z,t,ant_index(s)) = IBUFF(:,:,z,t,ant_index(s)) +
+     &                         ( VAR_OTH(:,:,s,MONTH)*
+     &                   day_fac_oth*hour_fac_oth(t)*vert_fac_oth(z) )*
+     &                           1000000/3600
           ENDDO
         ENDDO
       ENDDO
