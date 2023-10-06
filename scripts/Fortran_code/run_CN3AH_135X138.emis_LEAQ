@@ -12,13 +12,13 @@ setenv IOAPI_OFFSET_64 NO
 setenv GRIDDESC $CMAQ_DATA/met/mcip/${GRID_NAME}/${STDATE}/GRIDDESC
 
 # MEIC
-setenv POW_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.pow.ncf
-setenv IND_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.ind.ncf
-setenv RES_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.res.ncf
-setenv TRA_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.tra.ncf
-setenv AGR_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.agr.ncf
+setenv POW_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.pow.ncf
+setenv IND_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.ind.ncf
+setenv RES_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.res.ncf
+setenv TRA_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.tra.ncf
+setenv AGR_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.agr.ncf
 
-setenv SHP_FILE $CMAQ_HOME/PREP/emis/meic2019/emis.${GRID_NAME}.shp.ncf
+setenv SHP_FILE $CMAQ_HOME/PREP/emis/leaq_10/emis.${GRID_NAME}.shp.ncf
 setenv BIO_FILE /wind1/home/eesfq/xuyf/data/megan/MEGANv2.10_${GRID_NAME}_SAPRC07TIC_${STDATE}.ncf
 
 # LEAQ
