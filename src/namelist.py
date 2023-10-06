@@ -14,7 +14,7 @@ secmap = datadir + 'SectorMapping_new.xlsx'
 
 # local emis netcdf
 emis_nc_dir = datadir + 'step1_preliminary/leaq_category/sum/'
-local_bio_file = emis_nc_dir + 'Biomass.nc'
+local_bom_file = emis_nc_dir + 'Biomass.nc'
 local_bol_file = emis_nc_dir + 'Boiler.nc'
 local_bld_file = emis_nc_dir + 'Building.nc'
 local_dst_file = emis_nc_dir + 'Dust.nc'
@@ -36,7 +36,7 @@ meic_shp_file = meicdir + 'emis.CN3AH_135X138.shp.ncf'
 
 # allocated emis
 allocated_dir = datadir + 'step2_allocated/'
-leaq_bio_file = allocated_dir + 'emis.CN3AH_135X138.bio.ncf'
+leaq_bom_file = allocated_dir + 'emis.CN3AH_135X138.bom.ncf'
 leaq_bol_file = allocated_dir + 'emis.CN3AH_135X138.bol.ncf'
 leaq_bld_file = allocated_dir + 'emis.CN3AH_135X138.bld.ncf'
 leaq_dst_file = allocated_dir + 'emis.CN3AH_135X138.dst.ncf'

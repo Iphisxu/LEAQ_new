@@ -1,7 +1,7 @@
 clear
 % Specify file paths
 meic_sections = {'ind','pow','tra','res','agr'};
-leaq_sections = {'bio','bol','bld','dst','elc','rod','nro','pet','sol','oth'};
+leaq_sections = {'bom','bol','bld','dst','elc','rod','nro','pet','sol','oth'};
 sections = [leaq_sections, meic_sections];
 gridname = 'CN3AH_135X138';
 input_path = 'D:/data/Project_Anqing/Local_emis_2021/create_emis_new/step2_meic_and_leaq/';
